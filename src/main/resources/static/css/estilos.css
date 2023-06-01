@@ -1,0 +1,46 @@
+h2 {
+    background-color: blue;
+    color: white;
+}
+
+h3 {
+    text-align: center;
+    background-color: green;
+    color: red;
+}
+
+footer{
+    text-align: center;
+    background-color: yellow;
+    color: red;
+}
+
+a{
+   text-decoration: none;
+   background-color: yellow;
+   color: white;
+}
+
+a:hover{
+   background-color: black;
+   color: white;
+}
+/*Numeral para id*/
+#alerta{
+    background-color: lime;
+    color: red; 
+}
+/*Punto para class*/
+.aviso {
+    background-color: lime;
+    color: red;
+    
+}
+
+p span{
+    background-color: black;
+    color: white;
+    
+}
+
+
