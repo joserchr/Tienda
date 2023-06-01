@@ -1,18 +1,53 @@
-h2 {
-    background-color: blue;
-    color: white;
+
+*{
+    box-sizing: border-box;
+    margin: 0;
 }
 
-h3 {
-    text-align: center;
-    background-color: green;
-    color: red;
+body{
+    font-family: sans-serif;
+    background-color: bisque;
+    padding: 80px 20px 0;
+      
+}
+
+header{
+    position: fixed;
+    background-color: blue;
+    height: 80px;
+    top: 0;
+    left: 0;
+    width: 100%
+}
+
+aside{
+    position: fixed;
+    background-color: aquamarine;
+    top: 80px;
+    left: 0;
+    bottom:20px;
+    width: 20%
+}
+section{
+    overflow-y: scroll;
+    position: fixed;
+    background-color: bisque;
+    top: 80px;
+    left: 20%;
+    bottom:20px;
+    width: 80%
 }
 
 footer{
+    position: fixed;
     text-align: center;
     background-color: yellow;
     color: red;
+    left: 0;
+    bottom:0;
+    height: 20px;
+    width: 100%
+    
 }
 
 a{
@@ -25,22 +60,3 @@ a:hover{
    background-color: black;
    color: white;
 }
-/*Numeral para id*/
-#alerta{
-    background-color: lime;
-    color: red; 
-}
-/*Punto para class*/
-.aviso {
-    background-color: lime;
-    color: red;
-    
-}
-
-p span{
-    background-color: black;
-    color: white;
-    
-}
-
-
