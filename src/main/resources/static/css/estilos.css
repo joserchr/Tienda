@@ -46,8 +46,8 @@ footer{
     left: 0;
     bottom:0;
     height: 20px;
-    width: 100%
-    
+    width: 100%;
+    position:sticky;
 }
 
 a{
