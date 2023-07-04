@@ -5,8 +5,11 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import java.io.Serializable;
+import java.util.List;
 import lombok.Data;
 
 @Data
@@ -23,4 +26,9 @@ public class Categoria implements Serializable {
     private String descripcion;
     private String rutaImagen;
     private boolean activo;
+    
+    //Para hacer una "asociaciòn" de uno a muchos, usando id_categoria como llave
+    @OneToMany
+    @JoinColumn(name="id_categoria")
+    List<Producto> productos;
 }

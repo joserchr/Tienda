@@ -25,7 +25,7 @@ public class ProductoServiceImpl implements ProductoService {
         return lista;
     }
     
-    @Override
+     @Override
     @Transactional(readOnly = true)
     public Producto getProducto(Producto producto) {
         return productoDao.findById(producto.getIdProducto()).orElse(null);
@@ -42,6 +42,5 @@ public class ProductoServiceImpl implements ProductoService {
     public void delete(Producto producto) {
         productoDao.delete(producto);
     }
-
     
 }

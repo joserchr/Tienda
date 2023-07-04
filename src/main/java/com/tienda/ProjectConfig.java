@@ -13,9 +13,9 @@ import org.springframework.web.servlet.i18n.SessionLocaleResolver;
 
 @Configuration
 public class ProjectConfig implements WebMvcConfigurer {
-
-    //Los siguientes métodos se utilizan para internacionalizar 
-
+    
+    //Los siguientes métodos se utilizan para internacionalizar el sitio web
+    
     /* localeResolver */
     @Bean
     public LocaleResolver localeResolver() {
@@ -27,7 +27,7 @@ public class ProjectConfig implements WebMvcConfigurer {
                 "session.current.timezone");
         return slr;
     }
-
+    
     /* localeChangeInterceptor */
     @Bean
     public LocaleChangeInterceptor localeChangeInterceptor() {
@@ -35,19 +35,18 @@ public class ProjectConfig implements WebMvcConfigurer {
         lci.setParamName("lang");
         return lci;
     }
-
+    
     @Override
     public void addInterceptors(InterceptorRegistry registro) {
         registro.addInterceptor(localeChangeInterceptor());
     }
-
+    
     @Bean("messageSource")
     public MessageSource messageSource() {
-        ResourceBundleMessageSource messageSource
-                = new ResourceBundleMessageSource();
+        ResourceBundleMessageSource messageSource = 
+                new ResourceBundleMessageSource();
         messageSource.setBasenames("messages");
         messageSource.setDefaultEncoding("UTF-8");
         return messageSource;
     }
-
 }
