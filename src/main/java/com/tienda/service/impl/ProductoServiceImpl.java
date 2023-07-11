@@ -10,13 +10,13 @@ import org.springframework.transaction.annotation.Transactional;
 
 @Service
 public class ProductoServiceImpl implements ProductoService {
-    
+
     //Se crea un objeto tipo Autowired que se crearà automàticamente y solo una vez
     @Autowired
     private ProductoDao productoDao;
 
     @Override
-    @Transactional(readOnly=true)
+    @Transactional(readOnly = true)
     public List<Producto> getProductos(boolean activo) {
         var lista = productoDao.findAll();
         if (activo) {
@@ -24,8 +24,8 @@ public class ProductoServiceImpl implements ProductoService {
         }
         return lista;
     }
-    
-     @Override
+
+    @Override
     @Transactional(readOnly = true)
     public Producto getProducto(Producto producto) {
         return productoDao.findById(producto.getIdProducto()).orElse(null);
@@ -42,5 +42,24 @@ public class ProductoServiceImpl implements ProductoService {
     public void delete(Producto producto) {
         productoDao.delete(producto);
     }
-    
+
+    //Lista de los productos que estan en un rango de precios y los ordena por descripcion
+    @Override
+    @Transactional(readOnly = true)
+    public List<Producto> findByPrecioBetweenOrderByDescripcion(double precioInf, double precioSup) {
+        return productoDao.findByPrecioBetweenOrderByDescripcion(precioInf, precioSup);
+    }
+
+    @Override
+    @Transactional(readOnly = true)
+    public List<Producto> metodoJPQL(double precioInf, double precioSup) {
+        return productoDao.metodoJPQL(precioInf, precioSup);
+    }
+
+    @Override
+    @Transactional(readOnly = true)
+    public List<Producto> metodoNativo(double precioInf, double precioSup) {
+        return productoDao.metodoNativo(precioInf, precioSup);
+    }
+
 }
